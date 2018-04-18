@@ -33,8 +33,8 @@ public class NoteController {
 
 	// Get All Notes
 	@GetMapping("/version")
-	public String getVersion(Principal principal) {
-		log.debug("getVersion() - " + principal.getName());
+	public String getVersion() {
+		log.debug("getVersion()");
 		return "{\"version\": \"1.0.0\", \"datetime\": \"" + LocalDateTime.now() + "\"}";
 	}
 	
