@@ -1,6 +1,7 @@
 package com.example.springboot.hr.demo.controller;
 
 import java.security.Principal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -30,6 +31,12 @@ public class NoteController {
 	@Autowired
 	private NoteRepository noteRepository;
 
+	// Get All Notes
+	@GetMapping("/version")
+	public String getVersion(Principal principal) {
+		log.debug("getVersion() - " + principal.getName());
+		return "{\"version\": \"1.0.0\", \"datetime\": \"" + LocalDateTime.now() + "\"}";
+	}
 	
 	// Get All Notes
 	@GetMapping("/notes")
