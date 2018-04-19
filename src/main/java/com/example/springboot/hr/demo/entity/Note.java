@@ -106,4 +106,5 @@ public class Note implements Serializable {
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
+	
 }
