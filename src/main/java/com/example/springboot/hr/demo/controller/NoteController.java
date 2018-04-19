@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.springboot.hr.demo.entity.Note;
 import com.example.springboot.hr.demo.exception.ResourceNotFoundException;
+import com.example.springboot.hr.demo.misc.VersionInfo;
 import com.example.springboot.hr.demo.repository.NoteRepository;
 
 @RestController
@@ -31,11 +32,15 @@ public class NoteController {
 	@Autowired
 	private NoteRepository noteRepository;
 
+	@Autowired
+	private VersionInfo versionInfo;
+	
 	// Get All Notes
 	@GetMapping("/version")
-	public String getVersion() {
+	public VersionInfo getVersion() {
 		log.debug("getVersion()");
-		return "{\"version\": \"1.0.0\", \"datetime\": \"" + LocalDateTime.now() + "\"}";
+		return versionInfo;
+//		return "{\"version\": \"1.0.0\", \"datetime\": \"" + LocalDateTime.now() + "\"}";
 	}
 	
 	// Get All Notes
